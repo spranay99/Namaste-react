@@ -4,54 +4,73 @@ import Shimmer from "./Shimmer";
 
 const Body = () => {
   const [listofRestaurants, setListofRestaurants] = useState([]);
+  const [filteredRestaurants, setFilteredRestaurants] = useState([]);
+  const [searchInput, setSearchInput] = useState("");
 
   useEffect(() => {
     fetchData();
   }, []);
-
   const fetchData = async () => {
-    // const data = await fetch(
-    //   "https://www.swiggy.com/mapi/restaurants/list/v5?offset=0&is-seo-homepage-enabled=true&lat=19.1889541&lng=72.835543&carousel=true&third_party_vendor=1"
-    // );
     const data = await fetch(
       "https://www.swiggy.com/dapi/restaurants/list/v5?page_type=DESKTOP_WEB_LISTING&lat=19.1889541&lng=72.835543"
     );
     const json = await data.json();
     setListofRestaurants(
-      json.data?.cards[1].card?.card?.gridElements?.infoWithStyle.restaurants
+      json.data?.cards[2].card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+    setFilteredRestaurants(
+      json.data?.cards[2].card?.card?.gridElements?.infoWithStyle.restaurants
     );
   };
 
-  if (listofRestaurants.length === 0) {
-    return <Shimmer />;
-  }
-
-  return (
-    <>
-      <div className="body-container">
+  return listofRestaurants.length === 0 ? (
+    <Shimmer />
+  ) : (
+    <div className="body-container">
+      <div className="filter-container">
         <div className="search-container">
+          <input
+            className="search"
+            type="text"
+            value={searchInput}
+            placeholder="Search Restaurants/Food..."
+            onChange={(e) => setSearchInput(e.target.value)}
+          />
           <button
-            className="filter-btn"
+            className="search-btn"
             onClick={() => {
-              const filtedRestaurants = listofRestaurants.filter(
-                (restaurant) => restaurant.info.avgRating > 4.4
+              const searchedRestaurant = listofRestaurants.filter((rest) =>
+                rest.info.name
+                  .toLowerCase()
+                  .includes(searchInput.toLocaleLowerCase())
               );
-              setListofRestaurants(filtedRestaurants);
+              setFilteredRestaurants(searchedRestaurant);
             }}
           >
-            Top Rated Restaurants
+            Search
           </button>
         </div>
-        <div className="restaurants-container">
-          {listofRestaurants.map((restaurant) => (
-            <RestaurantCard
-              key={restaurant.info.id}
-              restaurantList={restaurant}
-            />
-          ))}
-        </div>
+        <button
+          className="filter-btn"
+          onClick={() => {
+            const filtedRestaurants = listofRestaurants.filter(
+              (restaurant) => restaurant.info.avgRating > 4.4
+            );
+            setListofRestaurants(filtedRestaurants);
+          }}
+        >
+          Top Rated Restaurants
+        </button>
       </div>
-    </>
+      <div className="restaurants-container">
+        {filteredRestaurants.map((restaurant) => (
+          <RestaurantCard
+            key={restaurant.info.id}
+            restaurantList={restaurant}
+          />
+        ))}
+      </div>
+    </div>
   );
 };
 
