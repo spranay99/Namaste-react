@@ -1,0 +1,104 @@
+{
+    "info": {
+        "id": "9122",
+        "name": "MM Mithaiwala",
+        "cloudinaryImageId": "331f0e0c083b7c6f9ac7d8787202d5f3",
+        "locality": "Malad, Kandivali",
+        "areaName": "Malad West",
+        "costForTwo": "₹250 for two",
+        "cuisines": [
+            "Sweets",
+            "Snacks",
+            "Desserts",
+            "Beverages"
+        ],
+        "avgRating": 4.5,
+        "veg": true,
+        "parentId": "466387",
+        "avgRatingString": "4.5",
+        "totalRatingsString": "10K+",
+        "promoted": true,
+        "adTrackingId": "cid=11993740~p=2~eid=0000018e-5510-81ba-6972-ed5e000e022c~srvts=1710824128954~69584",
+        "sla": {
+            "deliveryTime": 25,
+            "lastMileTravel": 1.7,
+            "serviceability": "SERVICEABLE",
+            "slaString": "25-30 mins",
+            "lastMileTravelString": "1.7 km",
+            "iconType": "ICON_TYPE_EMPTY"
+        },
+        "availability": {
+            "nextCloseTime": "2024-03-19 23:00:00",
+            "opened": true
+        },
+        "badges": {
+            "imageBadges": [
+                {
+                    "imageId": "v1695133679/badges/Pure_Veg111.png",
+                    "description": "pureveg"
+                }
+            ]
+        },
+        "isOpen": true,
+        "aggregatedDiscountInfoV2": {
+            "header": "50% OFF",
+            "shortDescriptionList": [
+                {
+                    "meta": "Use TRYNEW",
+                    "discountType": "Percentage",
+                    "operationType": "RESTAURANT"
+                }
+            ],
+            "descriptionList": [
+                {
+                    "meta": "50% off up to ₹100 | Use code TRYNEW",
+                    "discountType": "Percentage",
+                    "operationType": "RESTAURANT"
+                }
+            ]
+        },
+        "type": "F",
+        "badgesV2": {
+            "entityBadges": {
+                "imageBased": {
+                    "badgeObject": [
+                        {
+                            "attributes": {
+                                "description": "pureveg",
+                                "imageId": "v1695133679/badges/Pure_Veg111.png"
+                            }
+                        }
+                    ]
+                },
+                "textBased": {},
+                "textExtendedBadges": {}
+            }
+        },
+        "orderabilityCommunication": {
+            "title": {},
+            "subTitle": {},
+            "message": {},
+            "customIcon": {}
+        },
+        "differentiatedUi": {
+            "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+            "differentiatedUiMediaDetails": {
+                "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                "lottie": {},
+                "video": {}
+            }
+        },
+        "reviewsSummary": {},
+        "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+        "restaurantOfferPresentationInfo": {}
+    },
+    "analytics": {
+        "context": "seo-data-c354ffc3-8572-4696-a562-63f615eff336"
+    },
+    "cta": {
+        "link": "https://www.swiggy.com/restaurants/mm-mithaiwala-malad-kandivali-malad-west-mumbai-9122",
+        "text": "RESTAURANT_MENU",
+        "type": "WEBLINK"
+    },
+    "widgetId": "collectionV5RestaurantListWidget_byName"
+}
